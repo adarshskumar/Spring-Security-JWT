@@ -1,18 +1,36 @@
+#spring:
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/jwt_security
+#    username: postgres
+#    password: 4646
+#    driver-class-name: org.postgresql.Driver
+#  jpa:
+#    hibernate:
+#      ddl-auto: create-drop
+#    show-sql: false
+#    properties:
+#      hibernate:
+#        format_sql: true
+#    database: postgresql
+#    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/test
-    username: postgres
-    password: 4646
-    driver-class-name: org.postgresql.Driver
+    url: jdbc:h2:file:./data/premier_stores/user
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
   jpa:
     hibernate:
-      ddl-auto: create-drop
-    show-sql: false
-    properties:
-      hibernate:
-        format_sql: true
-    database: postgresql
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
+      path: /h2
+
+
+
 
 application:
   security:
